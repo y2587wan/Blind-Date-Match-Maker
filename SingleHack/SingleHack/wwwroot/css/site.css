@@ -1,21 +1,28 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Serif');
 
-.table th {
+
+.space {
+    margin-top: 50px;
+}
+
+
+table th {
     color: white;
     font-family: Cambria;
     font-size: 20px;
 }
 
 p.questions {
-    font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    padding: 25px;
 }
 
-.matcher-content {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color:antiquewhite;
-    font-size:32px;
+a.matcher-content {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: antiquewhite;
+    font-size: 32px;
     padding: 25px;
-    padding-left:20px;
+    padding-left: 20px;
 }
 
 #input_pw {

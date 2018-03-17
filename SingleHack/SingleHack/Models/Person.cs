@@ -16,5 +16,6 @@ namespace SingleHack.Models
         public string Name { get; set; }
         public Gender? Gender { get; set; }
         public string Code { get; set; }
+        public string Comment { get; set; }
     }
 }

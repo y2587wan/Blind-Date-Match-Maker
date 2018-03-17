@@ -20,7 +20,7 @@ namespace SingleHack.Controllers
 
         // GET: People
 
-        public async Task<IActionResult> Index(string searchString, string password)
+        public async Task<IActionResult> Details(string searchString, string password)
         {
             var people = from m in _context.Person
                          select m;
@@ -55,21 +55,9 @@ namespace SingleHack.Controllers
         }
 
         // GET: People/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Index()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var person = await _context.Person
-                .SingleOrDefaultAsync(m => m.ID == id);
-            if (person == null)
-            {
-                return NotFound();
-            }
-
-            return View(person);
+            return View();
         }
 
         // GET: People/Create
@@ -83,7 +71,7 @@ namespace SingleHack.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Gender,Code")] Person person)
+        public async Task<IActionResult> Create([Bind("ID,Name,Gender,Code,Comment")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -115,7 +103,7 @@ namespace SingleHack.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Gender,Code")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Gender,Code,Comment")] Person person)
         {
             if (id != person.ID)
             {

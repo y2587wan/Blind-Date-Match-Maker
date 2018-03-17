@@ -1,47 +1,19 @@
-﻿@model IEnumerable<SingleHack.Models.Person>
-
+﻿@model SingleHack.Models.Person
 @{
-    ViewData["Title"] = "Dater";
+    ViewData["Title"] = "Randomly Generated Code";
 }
 
-<h1 id="title">Your Daters</h1>
+<head>
+    <link rel="stylesheet" href="site.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+</head>
 
-<form asp-controller="People" asp-action="Index">
-    <p>
-        Code: <input type="text" id="input_code" name="SearchString">
-        Password: <input type="text" id="input_pw" name="Password">
-        <input type="submit" value="Search" />
-    </p>
-</form>
+<h1>You are now signed up to be matched!</h1>
+<br>
 
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Gender)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Code)
-                </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Code)
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<h2>Once you get a match, you will be notified by the matchmaker.</h2>
+<br>
+
+<div>
+    <a asp-area="" asp-controller="Home" asp-action="Index">Back to Main Page</a>
+</div>

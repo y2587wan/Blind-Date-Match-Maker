@@ -3,18 +3,22 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h2>Hello Matcher</h2>
+<head>
+    <link rel="stylesheet" href="site.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+</head>
+<h1 id="title">Hello Matcher</h1>
 
 <hr />
 <div class="row">
     <p class="questions">Have a code?</p>
-    <a asp-area="" asp-controller="People" asp-action="Index" class="matcher-content">Dater</a>
+    <a asp-area="" asp-controller="People" asp-action="Details" class="matcher-content">Dater</a>
     <p class="questions">New Matcher?</p>
     <a asp-action="Create" class="matcher-content">Get your code</a>
 </div>
 
+<div class="space"></div>
+
 <div>
     <a asp-area="" asp-controller="Home" asp-action="Index">Back to Main Page</a>
 </div>
-

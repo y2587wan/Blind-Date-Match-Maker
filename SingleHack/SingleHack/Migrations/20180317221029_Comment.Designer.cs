@@ -11,9 +11,10 @@ using System;
 namespace SingleHack.Migrations
 {
     [DbContext(typeof(SingleHackContext))]
-    partial class SingleHackContextModelSnapshot : ModelSnapshot
+    [Migration("20180317221029_Comment")]
+    partial class Comment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

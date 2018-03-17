@@ -3,11 +3,23 @@
 .table th {
     color: white;
     font-family: Cambria;
-    font-size: 20px
+    font-size: 20px;
+}
+
+p.questions {
+    font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+.matcher-content {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:antiquewhite;
+    font-size:32px;
+    padding: 25px;
+    padding-left:20px;
 }
 
 #input_pw {
-    color: black
+    color: black;
 }
 
 #input_code {
@@ -23,9 +35,6 @@
     padding-top: 20px
 }
 
-#create_click {
-    color: lightseagreen
-}
 
 
 body {
@@ -69,25 +78,25 @@ body {
 p {
     font-family: 'Merriweather', serif;
     color: white;
-    font-size: 18;
+    font-size: 18px;
 }
 
 h1 {
     font-family: 'Merriweather', serif;
     color: white;
-    font-size: 24;
+    font-size: 24px;
 }
 
 h2 {
     font-family: 'Merriweather', serif;
     color: white;
-    font-size: 18
+    font-size: 18px;
 }
 
 h4 {
     font-family: 'Merriweather', serif;
     color: white;
-    font-size: 18;
+    font-size: 18px;
 }
 
 input [type= text] {
@@ -125,5 +134,5 @@ button {
 form {
     font-family: 'Merriweather', serif;
     color: white;
-    font-size: 18
+    font-size: 18px;
 }

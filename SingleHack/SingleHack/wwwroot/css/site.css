@@ -1,16 +1,35 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Serif');
 
-.table th {
+
+.buttom {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.space {
+    margin-top: 50px;
+}
+
+
+table th {
     color: white;
     font-family: Cambria;
     font-size: 20px;
 }
 
 p.questions {
-    font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: white;
+    font-size: 32px;
+    padding: 25px;
+    padding-left: 20px;
 }
 
-.matcher-content {
+a.matcher-content {
+
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:antiquewhite;
     font-size:32px;
@@ -19,6 +38,7 @@ p.questions {
 }
 
 #input_pw {
+    padding-left: 20px;
     color: black;
 }
 

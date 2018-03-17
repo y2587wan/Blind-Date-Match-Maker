@@ -25,21 +25,9 @@ namespace SingleHack.Controllers
         }
 
         // GET: Matchers/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var matcher = await _context.Matcher
-                .SingleOrDefaultAsync(m => m.ID == id);
-            if (matcher == null)
-            {
-                return NotFound();
-            }
-
-            return View(matcher);
+            return View(await _context.Matcher.ToListAsync());
         }
 
         // GET: Matchers/Create
@@ -75,19 +63,9 @@ namespace SingleHack.Controllers
         }
 
         // GET: Matchers/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var matcher = await _context.Matcher.SingleOrDefaultAsync(m => m.ID == id);
-            if (matcher == null)
-            {
-                return NotFound();
-            }
-            return View(matcher);
+            return View();
         }
 
         // POST: Matchers/Edit/5

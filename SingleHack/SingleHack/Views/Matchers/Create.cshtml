@@ -4,9 +4,14 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<head>
+    <link rel="stylesheet" href="site.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+</head>
 
-<h4>Matcher</h4>
+<h1>Welcome matchmaker!</h1>
+<h1>To get started, please select a password.</h1>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -25,7 +30,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-area="" asp-controller="Home" asp-action="Index">Back to Main Page</a>
 </div>
 
 @section Scripts {

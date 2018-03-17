@@ -9,52 +9,22 @@ using SingleHack.Models;
 
 namespace SingleHack.Controllers
 {
-    public class PeopleController : Controller
+    public class MatchersController : Controller
     {
         private readonly SingleHackContext _context;
 
-        public PeopleController(SingleHackContext context)
+        public MatchersController(SingleHackContext context)
         {
             _context = context;
         }
 
-        // GET: People
-
-        public async Task<IActionResult> Index(string searchString, string password)
+        // GET: Matchers
+        public async Task<IActionResult> Index()
         {
-            var people = from m in _context.Person
-                         select m;
-            var matcher = from m in _context.Matcher
-                         select m;
-            var isCorrect = false;
-            if (!String.IsNullOrEmpty(password))
-            {
-                foreach (var item in matcher)
-                {
-                    if (item.Password == password)
-                    {
-                        isCorrect = true;
-                    }
-                }
-            }
-            else
-            {
-                isCorrect = false;
-            }
-
-            if (isCorrect && !String.IsNullOrEmpty(searchString))
-            {
-                people = people.Where(s => s.Code == searchString);
-                return View(await people.ToListAsync());
-            }
-            else
-            {
-                people = people.Where(s => s.Code == "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-                return View(await people.ToListAsync());
-            }    
+            return View(await _context.Matcher.ToListAsync());
         }
 
-        // GET: People/Details/5
+        // GET: Matchers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -62,39 +32,49 @@ namespace SingleHack.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Person
+            var matcher = await _context.Matcher
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (person == null)
+            if (matcher == null)
             {
                 return NotFound();
             }
 
-            return View(person);
+            return View(matcher);
         }
 
-        // GET: People/Create
+        // GET: Matchers/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: People/Create
+        // POST: Matchers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        public string RandomString(int length)
+        {
+            Random random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Gender,Code")] Person person)
+        public async Task<IActionResult> Create([Bind("ID,Password")] Matcher matcher)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(person);
+                matcher.Code = RandomString(5);
+                _context.Add(matcher);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+
+            return View(matcher);
         }
 
-        // GET: People/Edit/5
+        // GET: Matchers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -102,22 +82,22 @@ namespace SingleHack.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Person.SingleOrDefaultAsync(m => m.ID == id);
-            if (person == null)
+            var matcher = await _context.Matcher.SingleOrDefaultAsync(m => m.ID == id);
+            if (matcher == null)
             {
                 return NotFound();
             }
-            return View(person);
+            return View(matcher);
         }
 
-        // POST: People/Edit/5
+        // POST: Matchers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Gender,Code")] Person person)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Password,Code")] Matcher matcher)
         {
-            if (id != person.ID)
+            if (id != matcher.ID)
             {
                 return NotFound();
             }
@@ -126,12 +106,12 @@ namespace SingleHack.Controllers
             {
                 try
                 {
-                    _context.Update(person);
+                    _context.Update(matcher);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.ID))
+                    if (!MatcherExists(matcher.ID))
                     {
                         return NotFound();
                     }
@@ -142,10 +122,10 @@ namespace SingleHack.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(matcher);
         }
 
-        // GET: People/Delete/5
+        // GET: Matchers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -153,30 +133,30 @@ namespace SingleHack.Controllers
                 return NotFound();
             }
 
-            var person = await _context.Person
+            var matcher = await _context.Matcher
                 .SingleOrDefaultAsync(m => m.ID == id);
-            if (person == null)
+            if (matcher == null)
             {
                 return NotFound();
             }
 
-            return View(person);
+            return View(matcher);
         }
 
-        // POST: People/Delete/5
+        // POST: Matchers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var person = await _context.Person.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Person.Remove(person);
+            var matcher = await _context.Matcher.SingleOrDefaultAsync(m => m.ID == id);
+            _context.Matcher.Remove(matcher);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PersonExists(int id)
+        private bool MatcherExists(int id)
         {
-            return _context.Person.Any(e => e.ID == id);
+            return _context.Matcher.Any(e => e.ID == id);
         }
     }
 }

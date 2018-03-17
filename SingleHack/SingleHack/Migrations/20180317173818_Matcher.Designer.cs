@@ -11,9 +11,10 @@ using System;
 namespace SingleHack.Migrations
 {
     [DbContext(typeof(SingleHackContext))]
-    partial class SingleHackContextModelSnapshot : ModelSnapshot
+    [Migration("20180317173818_Matcher")]
+    partial class Matcher
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,11 +28,7 @@ namespace SingleHack.Migrations
 
                     b.Property<string>("Code");
 
-                    b.Property<string>("Name");
-
                     b.Property<string>("Password");
-
-                    b.Property<string>("ReturnUrl");
 
                     b.HasKey("ID");
 

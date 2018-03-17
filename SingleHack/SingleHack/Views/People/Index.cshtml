@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<SingleHack.Models.Person>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Dater";
 }
 
-<h2>Index</h2>
+<h2>Dater</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,6 +13,7 @@
 <form asp-controller="People" asp-action="Index">
     <p>
         Code: <input type="text" name="SearchString">
+        Password: <input type="text" name="Password">
         <input type="submit" value="Search" />
     </p>
 </form>
@@ -43,11 +44,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Code)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }

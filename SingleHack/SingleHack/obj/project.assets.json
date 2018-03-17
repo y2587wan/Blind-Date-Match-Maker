@@ -13126,11 +13126,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\singlehack\\SingleHack\\SingleHack\\SingleHack.csproj",
+      "projectUniqueName": "C:\\singlehack\\SingleHack\\SingleHack\\SingleHack.csproj",
       "projectName": "SingleHack",
-      "projectPath": "D:\\singlehack\\SingleHack\\SingleHack\\SingleHack.csproj",
+      "projectPath": "C:\\singlehack\\SingleHack\\SingleHack\\SingleHack.csproj",
       "packagesPath": "C:\\Users\\Alex Wang\\.nuget\\packages\\",
-      "outputPath": "D:\\singlehack\\SingleHack\\SingleHack\\obj\\",
+      "outputPath": "C:\\singlehack\\SingleHack\\SingleHack\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

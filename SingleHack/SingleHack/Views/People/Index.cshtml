@@ -4,12 +4,12 @@
     ViewData["Title"] = "Dater";
 }
 
-<h2>Your Daters</h2>
+<h1 id="title">Your Daters</h1>
 
 <form asp-controller="People" asp-action="Index">
     <p>
-        Code: <input type="text" name="SearchString">
-        Password: <input type="text" name="Password">
+        Code: <input type="text" id="input_code" name="SearchString">
+        Password: <input type="text" id="input_pw" name="Password">
         <input type="submit" value="Search" />
     </p>
 </form>

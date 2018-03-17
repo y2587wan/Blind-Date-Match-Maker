@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{CF27CCBE-2AFC-452C-84A9-00926674E5F4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SingleHack/wwwroot/css/site.css">
+    <Files>
+      <File FileName="SingleHack/wwwroot/css/site.css" Line="94" Column="2" />
+      <File FileName="SingleHack/Views/Home/Index.cshtml" Line="18" Column="61" />
+      <File FileName="SingleHack/Views/People/Create.cshtml" Line="17" Column="62" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.SingleHack PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

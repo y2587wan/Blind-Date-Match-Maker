@@ -7,23 +7,20 @@
     <link rel="stylesheet" href="site.css">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 </head>
-
+<div style="text-align:left">
 <h1>Your unique code is:</h1>
 <h2>@Html.DisplayFor(modelItem => Model.Last().Code)</h2>
-<h1>Your sercect username is:</h1>
+<h1>Your username is:</h1>
 <h2>@Html.DisplayFor(modelItem => Model.Last().Password)</h2>
 
 <h1>Instructions:</h1>
+<p>1) Make sure to remember your code and password so that you can access your list of matchers.</p>
+<p>2) Share your code with your friends, and get them to sign in <a asp-area="" asp-controller="People" asp-action="Create" class="btn btn-default btn-lg" role="button">Becoming a dater.</a></p>
+<p>3) Once your friends sign up, you can start matching them for blind dates! To create matches, login with your code and username at <a asp-area="" asp-controller="People" asp-action="Index" class="btn btn-default btn-lg" role="button">Daters.</a></p>
 <br>
-<p>1) Make sure to remember your code and username so that you can access your list of matchers.</p>
-<br>
-<p>2) Share your code with your friends, and get them to sign in <a asp-area="" asp-controller="People" asp-action="Create">Becoming a dater</a></p>
-<br>
-<p>3) Once your friends sign up, you can start matching them for blind dates! To create matches, login with your code and password at <a asp-area="" asp-controller="People" asp-action="Index">Matching page</a></p>
-<br>
+    </div>
 <div>
     <!-- Go to matching page /-->
-    
     <!-- <button type="button" onclick="http://localhost:65391/////////MATCHING LIST///////">Access your list</button> /-->
 </div>
 <div>

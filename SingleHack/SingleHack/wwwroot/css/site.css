@@ -1,6 +1,14 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Serif');
 
 
+.buttom {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    color: black;
+}
+
 .space {
     margin-top: 50px;
 }
@@ -14,7 +22,10 @@ table th {
 
 p.questions {
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: white;
+    font-size: 32px;
     padding: 25px;
+    padding-left: 20px;
 }
 
 a.matcher-content {
@@ -26,6 +37,7 @@ a.matcher-content {
 }
 
 #input_pw {
+    padding-left: 20px;
     color: black;
 }
 

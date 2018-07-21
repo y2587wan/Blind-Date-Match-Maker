@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SingleHack.Models.Person>
+@{
+    ViewData["Title"] = "Dater";
+}
+<head>
+    <link rel="stylesheet" href="site.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+</head>
+<h1 id="title">Your Daters</h1>
+<form asp-controller="People" asp-action="Details">
+    <p>
+        Code: <input type="text" id="input_code" name="SearchString" style="max-height:30px;">
+        Username: <input type="text" id="input_pw" name="Password" style="max-height:30px;">
+        <input type="submit" value="Search" style="max-height:40px;text-align:center;line-height: 20px;color:#ffb3b3ff;"/>
+    </p>
+</form>
+<form asp-controller="People" asp-action="Index">
+    <div class="col-lg-6" style="margin-top:5px">
+        <h2>Male</h2>
+        @foreach (var item in Model)
+            {
+            @if (item.Gender.ToString() == "Male")
+                {
+                <div class="row">
+                    <div class="col-lg-4">@Html.DisplayFor(modelItem => item.Name)</div>
+                    <div class="col-lg-4">@Html.DisplayFor(modelItem => item.Comment)</div>
+                </div>
+            }
+        }
+    </div>
+    <div class="col-lg-6" style="margin-top:5px">
+        <h2>Female</h2>
+        @foreach (var item in Model)
+            {
+            @if (item.Gender.ToString() == "Female")
+                {
+                <div class="row">
+                    <div class="col-lg-4">@Html.DisplayFor(modelItem => item.Name)</div>
+                    <div class="col-lg-4">@Html.DisplayFor(modelItem => item.Comment)</div>
+                </div>
+                <br />
+            }
+        }
+    </div>
+</form>
+<br />
+<div>
+    <a asp-area="" asp-controller="Home" asp-action="Index">Back to Main Page</a>
+</div>
